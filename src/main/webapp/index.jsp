@@ -1,7 +1,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="WEB-INF/jspf/declarativemethods.jspf" %>
 
-
+<%
+if (request.getParameter("btnLogOut") != null) {
+	session.invalidate();
+	response.sendRedirect("login.jsp");
+}
+%>
 <!DOCTYPE html>
 <html>
     <head>
